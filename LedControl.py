@@ -93,7 +93,7 @@ class LedControl:
     def setColumn(self, addr, col, value):
         if addr<0 or addr >= self.maxDevices or col < 0 or col>7 or value < 0 or value > 255:
             return
-        for i in range(8):
+        for row in range(8):
             val = value >> (7-row)
             val = val & 1
             self.setLed(addr, row, col, val)
